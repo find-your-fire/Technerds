@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>convForm - example</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="dist/jquery.convform.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="demo.css">
+
+<style>
+/*
+   .img1 {
+  background-image: url('https://media.istockphoto.com/photos/blue-wall-texture-picture-id175400834?k=6&m=175400834&s=612x612&w=0&h=t9aCeg_TAw8Jphs23O9MrD1AWwFxfSCsGqWkykzn3n4=');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+*/
+    
+    
+    .background-img{
+
+    position:fixed;
+    right:10px;
+    bottom: 10px 
+}
+    
+    
+    </style>
+    </head>
+<body>
+<!--
+<div class="background-img">
+    <a href="">
+<img border="0" alt="Bot" src="logo_w3s.gif" width="100" height="100">
+</a>
+</div> 
+-->
+	<section id="demo">
+	    <div class="vertical-align">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-sm-6 col-sm-offset-3 col-xs-offset-0">
+	                    <div class="card no-border">
+	                        <div id="chat" class="conv-form-wrapper">
+	                            <form action="" method="GET" class="hidden">
+	                                <select data-conv-question="Hello! I'm Sam.I am here to help you. Would you like to take one?"  name="first-question">
+	                                    <option value="yes">Yes</option>
+	                                    <option value="sure">Sure!</option>
+	                                </select>
+	                                <input type="text" name="name" data-conv-question="Alright! First, tell me your full name, please.|Okay! Please, tell me your name first.">
+	                                <input type="text" data-conv-question="Howdy, {name}:0! It's a pleasure to meet you." data-no-answer="true">
+	                                 
+	                              
+	                                <select name="multi[]" data-callback="storeState" data-conv-question="Please choose which ever is applicable." >
+	                                    <option value="Oblivion">Oblivion</option>
+	                                    <option value="Problem in reading">Problem in Learning/Reading</option>
+	                                </select>
+	                                
+	                                <div data-conv-fork="multi[]">
+	                                <div data-conv-case="Oblivion">
+	                            
+	                                <select name="programmer" data-callback="storeState" data-conv-question="So, Do you usually forget things?  ">
+	                                    <option value="yes">Yes</option>
+	                                    <option value="no">No</option>
+	                                </select>
+	                               
+                                      <div data-conv-fork="programmer">
+	                                    <div data-conv-case="yes">
+                                        <select name="programmer1" data-callback="storeState" data-conv-question="So, Do you face difficulty in carrying out common daily tasks? ">
+	                                    <option value="yes1">Yes</option>
+	                                    <option value="no1">No</option>
+	                                </select>
+                                        <div data-conv-fork="programmer1">
+                                        <div data-conv-case="yes1">
+	                                        <input type="text" data-conv-question="Your symptoms match that of Alzeimer's. I advice you to take Alzheimer's Screening test. " data-no-answer="true">
+                                            </div>
+                                              <div data-conv-case="no1">
+	                                        <input type="text" data-conv-question="Don't Take too much stress. Mediate and Exercise regularly. Just to be on safer side try , out the Alzheimer's screening assessment. " data-no-answer="true">
+                                            </div>
+                                            
+	                                    </div>
+                                          </div>
+                                    
+                                           <div data-conv-case="no">
+                                            <input type="text" data-conv-question="Don't Take too much stress. Mediate and Exercise regularly. Just to be on safer side try , out the Alzheimer's screening assessment." data-no-answer="true">
+	                                        
+                                            </div>
+                                        </div>
+                                        </div>
+                             
+                                        
+	                                  
+                                      
+                                        <div data-conv-case="Problem in reading">
+                                         <select name="programmer2" data-callback="storeState" data-conv-question="So, Are you not able to   learn things?  ">
+	                                    <option value="yes2">Yes</option>
+	                                    <option value="no2">No</option>
+	                                </select>
+	                               
+                                        <select name="programmer3" data-callback="storeState" data-conv-question="So, Are you not able to read and write things properly? ">
+	                                    <option value="yes3">Yes</option>
+	                                    <option value="no3">No</option>
+	                                </select>
+                                         <div data-conv-fork="programmer3">
+	                                    <div data-conv-case="yes3">
+	                                        <input type="text" data-conv-question="Your symptoms match that of Dyslexia. I advice you to take Dyslexia Screening test. " data-no-answer="true">
+                                             </div>
+                                              <div data-conv-case="no3">
+	                                     <input type="text" data-conv-question="Don't be stress then. Exercise and meditate regularly.Try to learn and grasp thngs.Work hard" data-no-answer="true">
+	                                    </div>
+                                            </div>
+                                      
+	                               
+                                         
+                                           
+                                            </div>
+                                        </div>
+                                  
+                                
+	                                <select data-conv-question="This is from my side! If you need support, contact to nearby doctors . Contact available on portal." id="">
+	                                    <option value="">Thanks!</option>
+	                                </select>
+	                            </form>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</section>
+	<script type="text/javascript" src="jquery-1.12.3.min.js"></script>
+	<script type="text/javascript" src="dist/autosize.min.js"></script>
+	<script type="text/javascript" src="dist/jquery.convform.js"></script>
+
+	<script>
+		function google(stateWrapper, ready) {
+			window.open("https://google.com");
+			ready();
+		}
+		function bing(stateWrapper, ready) {
+			window.open("https://bing.com");
+			ready();
+		}
+		var rollbackTo = false;
+		var originalState = false;
+		function storeState(stateWrapper, ready) {
+			rollbackTo = stateWrapper.current;
+			console.log("storeState called: ",rollbackTo);
+			ready();
+		}
+		function rollback(stateWrapper, ready) {
+			console.log("rollback called: ", rollbackTo, originalState);
+			console.log("answers at the time of user input: ", stateWrapper.answers);
+			if(rollbackTo!=false) {
+				if(originalState==false) {
+					originalState = stateWrapper.current.next;
+						console.log('stored original state');
+				}
+				stateWrapper.current.next = rollbackTo;
+				console.log('changed current.next to rollbackTo');
+			}
+			ready();
+		}
+		function restore(stateWrapper, ready) {
+			if(originalState != false) {
+				stateWrapper.current.next = originalState;
+				console.log('changed current.next to originalState');
+			}
+			ready();
+		}
+	</script>
+	<script>
+		jQuery(function($){
+			convForm = $('#chat').convform({selectInputStyle: 'disable'});
+			console.log(convForm);
+		});
+	</script>
+</body>
+</html>
